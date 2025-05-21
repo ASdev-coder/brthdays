@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Вітання для тата</title>
+  <link rel="icon" href="../icons/free-icon-love-10797120.png" type="image/x-icon">
+  <link rel="stylesheet" href="dad.css">
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header>
+    <h1>Любий Тато❤️</h1>
+    <h2>З днем народження!🥳</h2>
+    <nav>
+      <a href="#greeting">Привітання</a>
+      <a href="#gallery">Фото</a>
+      <a href="#wishes">Побажання</a>
+    </nav>
+    <div class="marquee-box">
+      <div class="marquee-text">Дякую, тато, що ти є ❤️ Ти — найкращий! ❤️ Ми тебе дуже любимо!</div>
+    </div>
+  </header>
+
+  <div class="container" id="greeting">
+    <div class="row">
+      <div class="col-12">
+        <div class="greeting-box">
+          <p>У цей день ми хочемо сказати тобі більше, ніж просто слова привітань. Ти — не просто наш тато чи чоловік. Ти — людина, яка завжди була поруч у найважливіші моменти нашого життя.</p>
+          <p>Я завдяки тобі навчився бути сильним, чесним, не здаватися перед труднощами й завжди залишатися людиною. Ти вчив мене не словами, а власним прикладом.</p>
+          <p>Твоя доброта, працьовитість, мудрість і справедливість — це риси, які я дуже ціную в тобі.</p>
+          <p>Я вдячний тобі за те, що завжди відчував твою підтримку. Твоє вміння вислухати, дати пораду або просто бути поруч — безцінне.</p>
+          <p>Бажаю тобі міцного здоров’я, душевного спокою, радості в кожному дні, тепла й щирих моментів поруч з тими, хто тебе любить і цінує.</p>
+          <p>Я дуже вдячний долі за те, що саме ти — мій тато. І я завжди пишатимусь тобою.🤗</p>
+          <p><em>З повагою та великою любов’ю — твій син.❤️</em></p>
+        </div>
+      </div>
+        <div class="col-12">
+          <img class="main" src="/papas/images/Father.jpg" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container gallery" id="gallery">
+    <div class="row">
+      <div class="col-12">
+        <h1>📷Підбірка твоїх фотографій</h1>
+        <p>😄Кожне фото — це згадка, тепло і посмішка. Дякую, що ти є.</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-4"><img src="/papas/images/on nature.jpg" alt=""><p class="caption">На природі</p></div>
+      <div class="col-4"><img src="/papas/images/mandryvnik.jpg" alt=""><p class="caption">Мандрівник</p></div>
+      <div class="col-4"><img src="/papas/images/seriously.jpg" alt=""><p class="caption">Серйозний</p></div>
+    </div>
+    <div class="row">
+      <div class="col-4"><img src="/papas/images/baby.jpg" alt=""><p class="caption">Малесенький</p></div>
+      <div class="col-4"><img src="/papas/images/smile.JPG" alt=""><p class="caption">Твоя усмішка — найкраща</p></div>
+      <div class="col-4"><img src="/papas/images/beautiful.JPG" alt=""><p class="caption">Гарнесенький</p></div>
+    </div>
+  </div>
+
+  <div class="container wishes" id="wishes">
+    <div class="row">
+      <div class="col-12">
+        <h1>Побажання</h1>
+        <p class="heart-text">❤️ Нехай твоє серце завжди буде сповнене радості.</p>
+        <p class="heart-text">🌞 Нехай у твоєму житті буде більше світла, тепла й спокою.</p>
+        <p class="heart-text">🫠 Ти заслуговуєш на найкраще, тато!</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="gift-box">
+    <button id="openGift">🎁 Відкрити подарунок</button>
+    <div id="giftMessage" class="hidden">
+      <p>Сюрприз! 🎉 Ти отримаєш ще більше обіймів сьогодні! 🤗</p>
+      <img src="/papas/images/surprisebox.png" alt="Подарунок">
+    </div>
+  </div>
+
+  <div class="container love-message">
+    <h2>Ми тебе дуже любимо🤗</h2>
+  </div>
+
+  <div class="back-to-home-section">
+    <a href="/" class="back-button">На головну</a>
+  </div>
+
+  <footer>
+    &copy; 2025 Сімейний сайт привітань
+  </footer>
+
+</body>
+
+  <script>
+  document.getElementById('openGift').addEventListener('click', function() {
+    const message = document.getElementById('giftMessage');
+    message.classList.toggle('hidden');
+  });
+  </script>
+
+</html>

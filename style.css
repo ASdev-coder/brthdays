@@ -1,0 +1,72 @@
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to bottom right, #fdfbfb, #ebedee);
+  color: #333;
+}
+header {
+  background-color: #ffd6e0;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+header h1 {
+  margin: 0;
+  font-size: 2.5em;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  padding: 60px 20px;
+  flex-wrap: wrap;
+}
+.card {
+  background: white;
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 280px;
+  text-align: center;
+}
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+}
+.card h2 {
+  margin-bottom: 15px;
+  font-size: 1.5em;
+}
+.card a {
+  text-decoration: none;
+  color: white;
+  background: #ff6f61;
+  padding: 12px 20px;
+  border-radius: 30px;
+  display: inline-block;
+  margin-top: 10px;
+  transition: background 0.3s ease;
+}
+.card a:hover {
+  background: #ff4c3b;
+}
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #f0f0f0;
+  margin-top: 40px;
+  font-size: 0.9em;
+  font-weight: 500;
+}
+
+.mom{
+  background-color: rgb(255, 200, 195);
+}
+
+.dad{
+  background-color: rgb(225, 255, 200);
+}
+
