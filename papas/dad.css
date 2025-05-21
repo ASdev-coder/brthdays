@@ -308,7 +308,7 @@ header nav{
     width: 100%;
     height: auto;
     object-fit: cover;
-    max-height: 300px;
+    max-height: 250px;
 }
 
 .caption {
