@@ -1,102 +1,122 @@
-body{
+body {
     margin: 0;
     font-family: 'Open Sans', sans-serif;
+    overflow-x: hidden; /* Забороняємо горизонтальну прокрутку на рівні body */
 }
 
-header{
+header {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     background-color: #cce69f;
     padding: 15px 0;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
-header h1, h2{
+header h1,
+header h2 {
     font-family: 'Comfortaa', cursive;
     text-align: center;
     margin: 0;
     padding: 5px 10px;
 }
 
-header h2{
-    margin-top: 5px;
-    font-size: 1.5em;
-}
-
 header h1 {
     font-size: 2.5em;
 }
 
-.container{
+header h2 {
+    margin-top: 5px;
+    font-size: 1.5em;
+}
+
+.container {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
     margin: 50px auto;
     background-color: #cce69f;
-    width: 80%;
+    width: 80%; /* Відсоткова ширина для адаптивності */
+    max-width: 1200px; /* Максимальна ширина для великих екранів */
     border-radius: 10px;
     padding: 20px;
-    box-sizing: border-box;
+    box-sizing: border-box; /* Важливо для розрахунку ширини з padding */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
-.gallery{
+.gallery {
     background-color: #dff8b5;
-    padding-bottom: 20px;
+    padding-bottom: 20px; /* Додали padding-bottom для відповідності макету */
 }
 
-.gallery .row{
+.gallery .row {
     margin-top: 0px;
 }
 
-.row{
+.row {
     display: flex;
-    margin: 30px;
-    gap: 20px;
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* Дозволяє елементам переноситися на новий рядок */
     justify-content: center;
+    margin: 30px; /* Загальний відступ для ряду */
+    gap: 20px; /* Відстань між елементами в ряду */
 }
 
-.col-4{
-    width: calc(33.333% - 20px);
-    margin-bottom: 20px;
+.col-4 {
+    flex: 1 1 calc(33.333% - 40px); /* 3 колонки, віднімаємо gap для коректного розрахунку */
+    max-width: 300px; /* Обмеження ширини для великих екранів */
     text-align: center;
+    margin-bottom: 20px; /* Відступ під кожним елементом col-4 */
+    box-sizing: border-box;
+    transition: transform 0.3s ease-in-out;
 }
 
-.col-6{
-    width: calc(6 * 100% / 12);
+.col-4:hover {
+    transform: scale(1.05);
+}
+
+.col-6 {
+    flex: 1 1 calc(50% - 20px); /* 2 колонки, віднімаємо gap */
+    max-width: 500px; /* Довільне обмеження для col-6, якщо використовується */
     margin: 10px;
+    box-sizing: border-box;
 }
 
 .col-12 {
-    width: calc(12 * 100% / 12);
+    width: 100%; /* Займає всю ширину */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 20px;
     text-align: center;
+    box-sizing: border-box;
 }
 
-p{
+p {
     font-size: 16px;
     font-weight: 400;
 }
 
-img{
-    width: 100%;
-    max-width: 300px;
+img {
+    width: 100%; /* Зображення завжди займають 100% ширини свого батька */
+    max-width: 300px; /* Максимальна ширина для великих екранів */
     height: auto;
     border-radius: 15px;
     border: 3px solid #8fb96e;
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease-in-out;
+    display: block; /* Уникаємо зайвих пробілів */
+    margin: 0 auto; /* Центруємо зображення */
 }
 
-img:hover {
-    transform: scale(1.05);
+
+.col-4 img {
+    max-height: 250px; /* Обмежуємо висоту зображень в галереї */
+    object-fit: cover; /* Обрізає зображення, зберігаючи пропорції */
 }
+
 
 footer {
     text-align: center;
@@ -105,17 +125,15 @@ footer {
     margin-top: 40px;
     font-size: 0.9em;
     font-weight: 500;
-}
-
-header, footer, .container {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
+
 
 nav {
     margin: 20px;
     display: flex;
     gap: 20px;
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* Дозволяє елементам переноситися */
     justify-content: center;
 }
 
@@ -128,6 +146,7 @@ nav a {
     border-radius: 15px;
     background-color: #e9f9c7;
     transition: background-color 0.3s;
+    white-space: nowrap; /* Запобігає перенесенню тексту на кнопках */
 }
 
 nav a:hover {
@@ -142,6 +161,8 @@ nav a:hover {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
     font-size: 16px;
     line-height: 1.6;
+    box-sizing: border-box;
+    width: 100%; /* Займає всю ширину col-12 */
 }
 
 .greeting-box p {
@@ -199,8 +220,10 @@ nav a:hover {
     font-size: 22px;
     color: #1d3d00;
     font-weight: bold;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     animation: fadeIn 2s ease-in;
+    box-sizing: border-box;
+    width: 100%; /* Займає всю ширину контейнера */
 }
 
 @keyframes fadeIn {
@@ -221,6 +244,8 @@ nav a:hover {
     border-bottom: 2px solid #a8c97c;
     padding: 10px 0;
     margin: 15px 0px;
+    width: 100%; /* Займає 100% ширини батьківського елемента */
+    box-sizing: border-box;
 }
 
 .marquee-text {
@@ -231,6 +256,7 @@ nav a:hover {
     font-size: 18px;
     color: #2e4600;
     font-weight: 700;
+    padding: 0 100vw; /* Додаємо відступ, щоб текст повністю виходив за межі екрану */
 }
 
 @keyframes marquee {
@@ -242,7 +268,7 @@ nav a:hover {
     }
 }
 
-header nav{
+header nav {
     margin: 15px 0px;
 }
 
@@ -252,8 +278,10 @@ header nav{
     background-color: #f1ffe0;
     padding: 30px;
     border-radius: 20px;
-    width: 80%;
+    width: 80%; /* Відсоткова ширина */
+    max-width: 800px; /* Обмеження ширини для великих екранів */
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
 }
 
 .gift-box button {
@@ -292,52 +320,19 @@ header nav{
     display: none;
 }
 
-.main{
+.main {
     max-width: none;
     pointer-events: none;
 }
 
-.gallery .row {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
-    margin: 30px auto;
-    width: 100%;
-}
-
-.col-4 {
-    flex: 1 1 calc(33.333% - 40px);
-    max-width: 300px;
-    text-align: center;
-    transition: transform 0.3s;
-}
-
-.col-4:hover {
-    transform: scale(1.02);
-}
-
-.col-4 img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    max-height: 250px;
-}
-
-.caption {
-    font-size: 16px;
-    font-style: italic;
-    font-weight: bolder;
-    color: #445f1b;
-    margin-top: 10px;
-}
-
+/* Кнопка "На головну" */
 .back-to-home-section {
     text-align: center;
     padding: 30px 0;
     background-color: #dff8b5;
     box-shadow: 0 -3px 10px rgba(0, 0, 0, 0.08);
     margin-top: 30px;
+    box-sizing: border-box;
 }
 
 .back-button {
@@ -351,27 +346,31 @@ header nav{
     font-size: 0.95em;
     font-weight: 700;
     transition: all 0.3s ease;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    white-space: nowrap; /* Запобігає перенесенню тексту на кнопці */
 }
 
 .back-button:hover {
     background-color: #d2f4c2;
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
 }
 
-@media (max-width: 550px) {
-    .back-to-home-section {
-        padding: 20px 0;
+/* Медіа-запити для адаптивності */
+
+/* Для планшетів та невеликих ноутбуків */
+@media (max-width: 1024px) {
+    .container {
+        width: 90%;
     }
-    .back-button {
-        padding: 8px 18px;
-        font-size: 0.9em;
+
+    .col-4 {
+        flex: 1 1 calc(50% - 30px); /* 2 колонки на планшетах */
+        max-width: 400px;
     }
 }
 
-
-/* Мобільна версія */
+/* Для більшості мобільних телефонів */
 @media (max-width: 768px) {
     header h1 {
         font-size: 2em;
@@ -390,6 +389,8 @@ header nav{
     nav a {
         padding: 8px 15px;
         font-size: 0.9em;
+        width: fit-content; /* Дозволяє кнопкам займати лише необхідну ширину */
+        margin: 0 auto; /* Центруємо кнопки навігації */
     }
 
     .marquee-text {
@@ -397,25 +398,25 @@ header nav{
     }
 
     .container {
-        width: 90%;
+        width: 95%;
         margin: 30px auto;
         padding: 15px;
     }
 
     .row {
-        flex-direction: column;
-        margin: 20px;
+        flex-direction: column; /* Кожен елемент в окремому рядку */
+        margin: 20px 10px; /* Зменшуємо горизонтальні відступи */
         gap: 15px;
     }
 
     .col-4, .col-6, .col-12 {
-        width: 100%;
-        margin-bottom: 15px;
-        max-width: none; /* Знімаємо обмеження max-width для адаптивності */
+        width: 100%; /* Займає всю ширину */
+        max-width: none; /* Знімаємо обмеження max-width */
+        margin-bottom: 0; /* Прибираємо зайві відступи, якщо row має gap */
     }
 
     img {
-        max-width: 100%; /* Дозволяємо зображенням займати всю ширину батьківського елемента */
+        max-width: 100%;
         height: auto;
     }
 
@@ -426,6 +427,7 @@ header nav{
 
     .greeting-box, .gift-box, .love-message {
         padding: 20px;
+        width: 100%; /* Забезпечуємо 100% ширини всередині контейнера */
     }
 
     .greeting-box p, #giftMessage {
@@ -460,6 +462,7 @@ header nav{
     }
 }
 
+/* Для дуже маленьких екранів (старі телефони) */
 @media (max-width: 480px) {
     header h1 {
         font-size: 1.8em;
@@ -474,13 +477,13 @@ header nav{
     }
 
     .container {
-        width: 95%;
-        margin: 20px auto;
+        width: 98%; /* Ще більше збільшуємо ширину */
+        margin: 15px auto;
         padding: 10px;
     }
 
     .row {
-        margin: 15px;
+        margin: 10px 5px; /* Ще більше зменшуємо відступи */
         gap: 10px;
     }
 
